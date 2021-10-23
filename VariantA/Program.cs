@@ -11,9 +11,9 @@ namespace VariantA
             var DayInMonth = SomeDate.Month.getDays(Date.DateMonth.Month, SomeDate.Year.Leap);
             var AfterMonth = Date.ValueOf(DayInMonth);
             var Between = SomeDate.DaysBetween();
-            Console.WriteLine($"Введенная дата: {SomeDate}, день недели: {TheDay}" +
-                $", количетсво дней в месяце: {DayInMonth}, день недели через месяц: {AfterMonth}" +
-                $", количество дней между текущей датой и введенной: {Between}");
+            Console.WriteLine($"Введенная дата: {SomeDate}\nДень недели: {TheDay}" +
+                $"\nКоличетсво дней в месяце: {DayInMonth}\nДень недели через месяц: {AfterMonth}" +
+                $"\nКоличество дней между текущей датой и введенной: {Between}");
         }
     }
 }

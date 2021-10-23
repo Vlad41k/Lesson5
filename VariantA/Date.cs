@@ -96,16 +96,17 @@ namespace VariantA
                     throw new ArgumentException();
             }
             public override string ToString() => Day.ToString();
-           /* public override bool Equals(object obj)
-            {
-                if (obj == null)
-                    return false;
-                DateDay otherDay = (DateDay)obj;
-                return (Day == otherDay.Day);
-            }*/
         }
         public static DayOfWeek ValueOf(int index) => 
             (DayOfWeek)((int)(DateTime.Now.DayOfWeek + index) % 7); // День недели через месяц
         public override string ToString() => $"{Day}.{Month}.{Year}";
+        public override bool Equals(object obj)
+        {
+            Date otherDate = obj as Date;
+            return otherDate != null ? 
+                otherDate.Year.Equals(Year) && 
+                otherDate.Month.Equals(Month) && 
+                otherDate.Day.Equals(Day) : false;
+        }
     }
 }
