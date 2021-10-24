@@ -8,9 +8,19 @@ namespace VariantB
     {
         static void Main(string[] args)
         {
-            var a  = new SoundRecording();
-            a.CalculateDuration(a._sounds);
-            a.FindSounds(a._sounds, 100, 200);
+            var PlayList  = new SongRecording();
+            var FirstSong = new AuthorSong("Cold","Rock",174,"Neffex");
+            var SecondSong = new AuthorSong("Villian", "Instrumental", 156, "Nightcore");
+            var ThirdSong = new FolkSong("Мамо", "Народная", 204, "Украина");
+            var FourthSong = new FolkSong("Ой, мороз, мороз", "Народная", 133, "Россия");
+            PlayList.AddSong(FirstSong);
+            PlayList.AddSong(SecondSong);
+            PlayList.AddSong(ThirdSong);
+            PlayList.AddSong(FourthSong);
+            PlayList.ShowDisk();
+            var SongsDuration = PlayList.CalculateDuration(PlayList._songs);
+            Console.WriteLine($"\nОбщая длительность песен на диске: {SongsDuration}");
+            SongRecording.FindSong(PlayList._songs, 150, 180);
         }
     }
 }

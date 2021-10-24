@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace VariantB
 {
-    class AuthorSound : Sound
+    class AuthorSong : Song
     {
         public string Author { get; set; }
-        public AuthorSound(string name, string style, int duration, string author)
+        public AuthorSong(string name, string style, int duration, string author)
             : base(name, style, duration)
         {
             Author = author;
-        }
+        } // Конструктор
         public override void ViewInformation()
         {
             Console.WriteLine("Информация про историю развития авторской музыки");
-        }
+        } // Переопределение метода
         public override string ToString()
         {
-            return $"Name is {Name},\tStyle is {Style},\tDuration is {Duration},\tAuthor is {Author}";
-        }
+            return $"Name is {Name},\tStyle is {Style},\tDuration is {Duration / 60}:{Duration % 60},\tAuthor is {Author}";
+        }// Переопределение метода 
     }
 }
